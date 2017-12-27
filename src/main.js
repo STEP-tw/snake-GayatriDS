@@ -64,9 +64,6 @@ const startGame=function() {
   if (Snake.head==numberOfRows || Snake.head==numberOfCols) {
     terminateGame();
   }
-  if(body.includes(Snake.head)) {
-    terminateGame();
-  }
   drawSnake(snake);
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
