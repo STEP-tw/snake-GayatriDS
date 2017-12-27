@@ -54,9 +54,17 @@ const createFood=function(numberOfRows,numberOfCols) {
   food=generateRandomPosition(numberOfCols,numberOfRows);
 }
 
+const terminateGame = function() {
+  document.getElementById('terminateText').innerText='Game Over';
+  startGame();
+}
+
 const startGame=function() {
   createSnake();
   drawGrids(numberOfRows,numberOfCols);
+  if (Snake.head==numberOfRows || Snake.head==numberOfCols) {
+    terminateGame();
+  }
   drawSnake(snake);
   createFood(numberOfRows,numberOfCols);
   drawFood(food);
